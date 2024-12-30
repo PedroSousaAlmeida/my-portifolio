@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import HeroSection from "@/components/HeroSection.vue";
+import { defineAsyncComponent } from "vue";
+const Navbar = defineAsyncComponent(() => import("@/components/NavBar.vue"));
+const HeroSection = defineAsyncComponent(() => import("@/components/HeroSection.vue"));
 </script>
 
 <template>
-  <HeroSection />
+  <div class="bg-[#111827] min-h-screen">
+    <Navbar />
+    <HeroSection />
+  </div>
 </template>

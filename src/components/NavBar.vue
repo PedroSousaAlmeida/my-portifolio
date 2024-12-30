@@ -4,16 +4,15 @@
   >
     <div class="text-white text-3x1 font-bold">LOGO</div>
     <!-- Botão para mobile  -->
-
-    <div class="md:hiiden z-30">
+    <div class="md:hidden z-30">
       <button
         type="button"
-        class="block text- focus:outline-none"
+        class="block focus:outline-none"
         @click="isMenuOpen = !isMenuOpen"
       >
         <span v-if="isMenuOpen" class="text-5x1">
           <img
-            src="https://img.icons8.com/?size=100&id=AyxPkDQxiELv&format=png&color=000000"
+            src="https://img.icons8.com/?size=100&id=66766&format=png&color=FFFFFF"
             alt="close"
             width="50"
             height="50"
@@ -21,7 +20,7 @@
         </span>
         <span v-else="isMenuOpen" class="text-5x1">
           <img
-            src="https://img.icons8.com/?size=100&id=3096&format=png&color=000000"
+            src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF"
             alt="menu"
             width="50"
             height="50"
@@ -32,7 +31,8 @@
     <!-- Navbar link  -->
     <nav
       :class="[
-        'fixed inset-0 z-20 flex flex-col items-center justify-center bg-[#111827] md:relative md:bg-transparent md:flex md:justify-between',
+        'fixed inset-0 z-20 flex flex-col items-center justify-center bg-[#111827] md:relative md:bg-transparent md:flex md:justify-between md:flex-row',
+        isMenuOpen ? 'block' : 'hidden',
       ]"
     >
       <ul
