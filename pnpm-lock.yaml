@@ -11,9 +11,15 @@ importers:
       aos:
         specifier: ^2.3.4
         version: 2.3.4
+      emailjs-com:
+        specifier: ^3.2.0
+        version: 3.2.0
       vue:
         specifier: ^3.5.13
         version: 3.5.13
+      vue3-carousel:
+        specifier: ^0.12.0
+        version: 0.12.0(vue@3.5.13)
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
@@ -483,6 +489,11 @@ packages:
   electron-to-chromium@1.5.76:
     resolution: {integrity: sha512-CjVQyG7n7Sr+eBXE86HIulnL5N8xZY1sgmOPGuq/F0Rr0FJq63lg0kEtOIDfZBk44FnDLf6FUJ+dsJcuiUDdDQ==}
 
+  emailjs-com@3.2.0:
+    resolution: {integrity: sha512-Prbz3E1usiAwGjMNYRv6EsJ5c373cX7/AGnZQwOfrpNJrygQJ15+E9OOq4pU8yC977Z5xMetRfc3WmDX6RcjAA==}
+    engines: {node: '>=12.0.0'}
+    deprecated: The SDK name changed to @emailjs/browser
+
   emoji-regex@8.0.0:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
 
@@ -853,6 +864,11 @@ packages:
         optional: true
       yaml:
         optional: true
+
+  vue3-carousel@0.12.0:
+    resolution: {integrity: sha512-ZpwZEYKtoWtItt5PcWx0nOPWn72+7xVDH0g95f1LXlspxRXMQRrQ/R33sxlew3H4T9LaXaPofsdTV1IvEfj2dw==}
+    peerDependencies:
+      vue: ^3.5.0
 
   vue@3.5.13:
     resolution: {integrity: sha512-wmeiSMxkZCSc+PM2w2VRsOYAZC8GdipNFRTsLSfodVqI9mbejKeXEGr8SckuLnrQPGe3oJN5c3K0vpoU9q/wCQ==}
@@ -1229,6 +1245,8 @@ snapshots:
 
   electron-to-chromium@1.5.76: {}
 
+  emailjs-com@3.2.0: {}
+
   emoji-regex@8.0.0: {}
 
   emoji-regex@9.2.2: {}
@@ -1594,6 +1612,10 @@ snapshots:
       fsevents: 2.3.3
       jiti: 1.21.7
       yaml: 2.6.1
+
+  vue3-carousel@0.12.0(vue@3.5.13):
+    dependencies:
+      vue: 3.5.13
 
   vue@3.5.13:
     dependencies:
