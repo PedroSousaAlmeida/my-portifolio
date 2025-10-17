@@ -19,8 +19,7 @@
             </span>
           </h3>
           <p class="text-gray-400 mb-6 max-w-md">
-            Full Stack Developer passionate about creating amazing web
-            experiences with clean code and modern technologies.
+            {{ t('footer.description') }}
           </p>
 
           <!-- Social Links -->
@@ -83,7 +82,7 @@
 
         <!-- Quick Links -->
         <div>
-          <h4 class="text-lg font-bold mb-4 text-white">Quick Links</h4>
+          <h4 class="text-lg font-bold mb-4 text-white">{{ t('footer.quickLinks') }}</h4>
           <ul class="space-y-2">
             <li>
               <a
@@ -103,7 +102,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Services
+                {{ t('nav.services') }}
               </a>
             </li>
             <li>
@@ -124,7 +123,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                About Me
+                {{ t('nav.about') }}
               </a>
             </li>
             <li>
@@ -145,7 +144,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Skills
+                {{ t('nav.skills') }}
               </a>
             </li>
             <li>
@@ -166,7 +165,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Projects
+                {{ t('nav.projects') }}
               </a>
             </li>
             <li>
@@ -187,7 +186,7 @@
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                Contact
+                {{ t('nav.contact') }}
               </a>
             </li>
           </ul>
@@ -195,7 +194,7 @@
 
         <!-- Tech Stack -->
         <div>
-          <h4 class="text-lg font-bold mb-4 text-white">Tech Stack</h4>
+          <h4 class="text-lg font-bold mb-4 text-white">{{ t('footer.techStack') }}</h4>
           <div class="flex flex-wrap gap-2">
             <span
               class="px-3 py-1 text-xs rounded-full bg-[#111a3e]/50 border border-[#1f1641] text-gray-400 hover:border-primary/50 hover:text-primary transition-all duration-300"
@@ -237,11 +236,11 @@
           class="flex flex-col md:flex-row justify-between items-center gap-4"
         >
           <p class="text-gray-400 text-sm">
-            © {{ currentYear }} Pedro Almeida. All rights reserved.
+            © {{ currentYear }} {{ t('footer.rights') }}
           </p>
 
           <div class="flex items-center gap-2 text-sm text-gray-400">
-            <span>Made with</span>
+            <span>{{ t('footer.madeWith') }}</span>
             <svg
               class="w-4 h-4 text-pink-500 animate-pulse"
               fill="currentColor"
@@ -253,7 +252,7 @@
                 clip-rule="evenodd"
               />
             </svg>
-            <span>by Pedro Almeida</span>
+            <span>{{ t('footer.by') }}</span>
           </div>
 
           <button
@@ -273,7 +272,7 @@
                 d="M5 10l7-7m0 0l7 7m-7-7v18"
               />
             </svg>
-            Back to Top
+            {{ t('footer.backToTop') }}
           </button>
         </div>
       </div>
@@ -283,7 +282,9 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 
+const { t } = useI18n()
 const currentYear = computed(() => new Date().getFullYear())
 
 const scrollToTop = () => {

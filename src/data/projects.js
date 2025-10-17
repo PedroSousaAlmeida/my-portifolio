@@ -5,7 +5,8 @@ export const projects = [
     slug: 'herbtec',
     category: 'web development',
     featured: true,
-    shortDescription: 'Plataforma full-stack para gestão e recomendação de herbicidas para usinas de cana-de-açúcar',
+    shortDescription:
+      'Plataforma full-stack para gestão e recomendação de herbicidas para usinas de cana-de-açúcar',
     description: `
       Sistema completo de gerenciamento e recomendação de herbicidas desenvolvido para otimizar
       o controle de plantas daninhas em usinas de cana-de-açúcar. A aplicação oferece análise
@@ -14,13 +15,23 @@ export const projects = [
       O sistema inclui dashboards interativos, gestão de usuários com diferentes níveis de acesso,
       histórico completo de recomendações, e funcionalidades de orçamento.
     `,
-    image: 'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800&h=600&fit=crop',
+    image: '/images/project_one/Herbetech.png',
     images: [
-      'https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&h=800&fit=crop'
+      '/images/project_one/Herbetech.png',
+      '/images/project_one/dashboard.png',
+      '/images/project_one/Resumo_herbicidas.png',
+      '/images/project_one/Tabela_herbicidas.png',
+      '/images/project_one/uploadplanilhas.png',
     ],
-    technologies: ['Vue.js 3', 'NestJS', 'MongoDB', 'TypeScript', 'TailwindCSS', 'Pinia', 'Vue Query', 'Keycloak', 'CASL'],
+    technologies: [
+      'Vue.js 3',
+      'NestJS',
+      'MongoDB',
+      'TypeScript',
+      'TailwindCSS',
+      'Vue Query',
+      'Keycloak',
+    ],
     features: [
       'Autenticação e autorização via Keycloak',
       'Sistema de recomendação inteligente de herbicidas',
@@ -30,9 +41,9 @@ export const projects = [
       'Sistema de orçamento e custos',
       'Exportação de relatórios',
       'Níveis de acesso granulares (Admin, Membro, Admin-Usina, Membro-Usina)',
-      'API RESTful documentada com Swagger'
+      'API RESTful documentada com Swagger',
     ],
-    gitURL: 'https://github.com/seu-usuario/herbtec',
+    gitURL: '#',
     webURL: '#',
     demoAvailable: false,
     year: '2024',
@@ -41,241 +52,259 @@ export const projects = [
       'Implementação de regras complexas de negócio para recomendação de herbicidas',
       'Integração com Keycloak para autenticação SSO',
       'Design de sistema escalável com Clean Architecture',
-      'Performance optimization para dashboards com grandes volumes de dados'
-    ]
+      'Performance optimization para dashboards com grandes volumes de dados',
+    ],
   },
   {
     id: 2,
-    title: 'Portfolio Pessoal Interativo',
-    slug: 'portfolio',
+    title: 'CondoCare Web - Sistema Administrativo de Condomínios',
+    slug: 'condocare-web',
     category: 'web development',
     featured: true,
-    shortDescription: 'Portfolio moderno e responsivo desenvolvido com Vue 3 e animações avançadas',
+    shortDescription:
+      'Plataforma completa de gestão condominial para síndicos, zeladores e porteiros',
     description: `
-      Portfolio pessoal desenvolvido com as tecnologias mais modernas do ecossistema Vue.js.
-      Apresenta design clean, dark mode, animações suaves e navegação intuitiva.
+      Sistema web completo desenvolvido para administração de condomínios, oferecendo ferramentas
+      essenciais para síndicos, zeladores e porteiros gerenciarem o dia a dia do condomínio.
 
-      O projeto demonstra habilidades em frontend development, UX/UI design e otimização
-      de performance. Inclui seção de projetos dinâmica, formulário de contato funcional,
-      e integração com APIs externas.
+      A plataforma centraliza todas as operações administrativas, desde o controle de entregas
+      até a gestão de prestadores de serviço, proporcionando eficiência e organização para a
+      administração condominial.
     `,
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop',
+    image: '/images/project_two/CondoCare.png',
     images: [
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&h=800&fit=crop'
+      '/images/project_two/CondoCare.png',
+      '/images/project_two/CondoCareLogin.png',
+      '/images/project_two/EntregasCondoCare.png',
+      '/images/project_two/EnviarNotificacoesCondoCare.png',
+      '/images/project_two/PrestadoresDeServico.png',
+      '/images/project_two/SupervisoresCondoCare.png',
+      '/images/project_two/TicketsCondoCare.png',
+      '/images/project_two/VincularMoradoresCondocare.png',
     ],
-    technologies: ['Vue.js 3', 'TailwindCSS', 'AOS', 'EmailJS', 'Vite', 'Vue Router'],
+    technologies: [
+      'React',
+      'NestJS',
+      'PostgreSQL',
+      'Prisma',
+      'Orval',
+      'TypeScript',
+      'TailwindCSS',
+    ],
     features: [
-      'Design responsivo mobile-first',
-      'Animações on-scroll com AOS',
-      'Seção de projetos com filtros dinâmicos',
-      'Formulário de contato funcional com EmailJS',
-      'Navegação suave entre seções',
-      'Glassmorphism effects',
-      'Performance otimizada com lazy loading',
-      'SEO friendly'
+      'Gestão completa de entregas na portaria',
+      'Sistema de tickets e ocorrências',
+      'Registro e acompanhamento de chamados dos porteiros',
+      'Atualização de status de chamados em tempo real',
+      'Gestão de prestadores de serviço',
+      'Dashboard administrativo com métricas',
+      'Diferentes níveis de acesso (Síndico, Zelador, Porteiro)',
+      'Histórico completo de atividades',
+      'Notificações automáticas',
     ],
-    gitURL: 'https://github.com/seu-usuario/portfolio',
+    gitURL: '#',
     webURL: '#',
-    demoAvailable: true,
+    demoAvailable: false,
     year: '2024',
-    role: 'Frontend Developer',
+    role: 'Full Stack Developer',
     challenges: [
-      'Criar animações performáticas sem comprometer UX',
-      'Implementar design system consistente',
-      'Otimizar carregamento de imagens e assets',
-      'Garantir acessibilidade em todos os componentes'
-    ]
+      'Integração complexa entre Prisma e Orval para type-safety completo',
+      'Implementar sistema de notificações em tempo real',
+      'Gerenciar diferentes fluxos de trabalho para cada tipo de usuário',
+      'Otimizar performance com grandes volumes de registros diários',
+    ],
   },
   {
     id: 3,
-    title: 'E-commerce Dashboard',
-    slug: 'ecommerce-dashboard',
+    title: 'F1 Championship Manager',
+    slug: 'f1-championship',
     category: 'web development',
     featured: false,
-    shortDescription: 'Dashboard administrativo para gerenciamento de e-commerce com analytics',
+    shortDescription:
+      'Sistema de gestão de campeonato de Fórmula 1 entre amigos com análise de estatísticas',
     description: `
-      Dashboard completo para administração de loja virtual, incluindo gestão de produtos,
-      pedidos, clientes e relatórios analíticos. Interface intuitiva com gráficos interativos
-      e métricas em tempo real.
+      Aplicação desenvolvida para gerenciar um campeonato de Fórmula 1 entre amigos,
+      oferecendo controle completo de pontuações, estatísticas e classificações.
 
-      Sistema desenvolvido com foco em usabilidade e performance, permitindo que administradores
-      gerenciem toda operação da loja de forma eficiente.
+      O sistema utiliza Python tanto no frontend quanto no backend, com Streamlit
+      proporcionando uma interface web interativa e responsiva. Todos os dados são
+      armazenados localmente em SQLite.
     `,
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop',
+    image: '/images/project_three/F1_classificacao.png',
     images: [
-      'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1543286386-713bdd548da4?w=1200&h=800&fit=crop'
+      '/images/project_three/F1_classificacao.png',
+      '/images/project_three/F1_equipes.png',
+      '/images/project_three/F1_estatisticas.png',
+      '/images/project_three/F1_estatisticas_gerais.png',
+      '/images/project_three/F1_Gerencia_resultado.png',
+      '/images/project_three/F1_pilotos.png',
+      '/images/project_three/F1_Projecao.png',
+      '/images/project_three/F1_resultados.png',
     ],
-    technologies: ['Vue.js 3', 'Chart.js', 'ApexCharts', 'Pinia', 'Axios', 'TailwindCSS'],
+    technologies: ['Python', 'Streamlit', 'SQLite', 'FastAPI', 'Pandas'],
     features: [
-      'Dashboard com KPIs e métricas',
-      'Gestão de produtos com upload de imagens',
-      'Sistema de pedidos e status',
-      'Relatórios de vendas com gráficos',
-      'Gestão de clientes',
-      'Sistema de notificações',
-      'Exportação de dados para CSV/Excel',
-      'Dark mode'
+      'Frontend e backend totalmente em Python',
+      'Interface web interativa com Streamlit',
+      'Armazenamento de dados em SQLite',
+      'Gestão de pilotos e equipes',
+      'Registro de resultados de corridas',
+      'Tabela de classificação em tempo real',
+      'Estatísticas detalhadas por piloto',
+      'Histórico completo de temporadas',
+      'Gráficos de evolução de pontos',
     ],
-    gitURL: 'https://github.com/seu-usuario/ecommerce-dashboard',
-    webURL: '#',
-    demoAvailable: false,
-    year: '2023',
-    role: 'Frontend Developer',
-    challenges: [
-      'Implementar gráficos performáticos com grandes volumes de dados',
-      'Criar sistema de filtros complexos',
-      'Otimizar renderização de listas longas',
-      'Implementar state management eficiente'
-    ]
-  },
-  {
-    id: 4,
-    title: 'Task Manager API',
-    slug: 'task-manager-api',
-    category: 'backend',
-    featured: false,
-    shortDescription: 'API RESTful para gerenciamento de tarefas com autenticação JWT',
-    description: `
-      API robusta desenvolvida com NestJS seguindo princípios de Clean Architecture.
-      Oferece endpoints completos para gerenciamento de tarefas, projetos e equipes.
-
-      Implementa autenticação segura, autorização baseada em roles, e documentação
-      automática com Swagger. Banco de dados MongoDB com Mongoose ODM.
-    `,
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=600&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=1200&h=800&fit=crop'
-    ],
-    technologies: ['NestJS', 'MongoDB', 'TypeScript', 'JWT', 'Swagger', 'Jest', 'Docker'],
-    features: [
-      'Autenticação JWT com refresh tokens',
-      'CRUD completo de tarefas e projetos',
-      'Sistema de tags e categorias',
-      'Comentários e anexos em tarefas',
-      'Notificações em tempo real',
-      'Documentação Swagger/OpenAPI',
-      'Testes unitários e e2e',
-      'Docker containerization'
-    ],
-    gitURL: 'https://github.com/seu-usuario/task-manager-api',
+    gitURL: '#',
     webURL: '#',
     demoAvailable: false,
     year: '2024',
-    role: 'Backend Developer',
+    role: 'Full Stack Developer',
     challenges: [
-      'Implementar autorização granular com CASL',
-      'Otimizar queries complexas no MongoDB',
-      'Criar arquitetura escalável e manutenível',
-      'Implementar cobertura de testes adequada'
-    ]
+      'Criar interface responsiva e intuitiva com Streamlit',
+      'Implementar lógica complexa de pontuação da F1',
+      'Otimizar queries SQLite para visualizações rápidas',
+      'Gerar gráficos interativos de estatísticas',
+    ],
+  },
+  {
+    id: 4,
+    title: 'FIFA Bet - Sistema de Apostas Corporativo',
+    slug: 'fifa-bet',
+    category: 'web development',
+    featured: true,
+    shortDescription:
+      'Plataforma de apostas para campeonato de FIFA da empresa com gestão de times e odds',
+    description: `
+      Sistema completo de apostas desenvolvido para o campeonato de FIFA da empresa,
+      permitindo que funcionários apostem nos jogos e acompanhem suas pontuações.
+
+      A aplicação integra-se com Supabase para backend e autenticação, e utiliza
+      a API do Challonge para geração automática de chaves e partidas do torneio.
+      Dashboard completo mostra classificações, odds e resultados em tempo real.
+    `,
+    image: '/images/project_four/Bet_dashboard.png',
+    images: [
+      '/images/project_four/Bet_dashboard.png',
+      '/images/project_four/bet_classificacao.png',
+      '/images/project_four/Bet_duplas.png',
+      '/images/project_four/Bet_solutions_campeonato.png',
+      '/images/project_four/Meu_perfil.png',
+      '/images/project_four/Minhas Apostas.png',
+      '/images/project_four/Odds_partidas.png',
+    ],
+    technologies: [
+      'Next.js',
+      'Supabase',
+      'TypeScript',
+      'TailwindCSS',
+      'Challonge API',
+      'React Query',
+    ],
+    features: [
+      'Criação e gestão de equipes (duplas)',
+      'Sistema de odds dinâmicas',
+      'Ranking de principais apostadores',
+      'Dashboard com classificações em tempo real',
+      'Visualização detalhada de partidas',
+      'Integração com Challonge para geração automática de chaves',
+      'Controle automático de pontuação',
+      'Sistema de apostas com saldo virtual',
+      'Histórico completo de apostas e resultados',
+      'Notificações de início de partidas',
+    ],
+    gitURL: '#',
+    webURL: '#',
+    demoAvailable: false,
+    year: '2024',
+    role: 'Full Stack Developer',
+    challenges: [
+      'Integrar Challonge API para sincronização automática de partidas',
+      'Implementar sistema de odds justo e balanceado',
+      'Criar dashboard em tempo real com Supabase realtime',
+      'Gerenciar estado complexo de apostas e resultados',
+      'Garantir integridade de dados em transações de apostas',
+    ],
   },
   {
     id: 5,
-    title: 'Weather App',
-    slug: 'weather-app',
+    title: 'CondoCare Mobile - App para Moradores',
+    slug: 'condocare-mobile',
     category: 'mobile app',
-    featured: false,
-    shortDescription: 'Aplicativo mobile de previsão do tempo com geolocalização',
+    featured: true,
+    shortDescription:
+      'Aplicativo mobile para moradores de condomínios com gestão de entregas e tickets',
     description: `
-      Aplicativo mobile desenvolvido com Vue 3 e Capacitor para iOS e Android.
-      Integra APIs de previsão do tempo oferecendo dados precisos e atualizados.
+      Aplicativo mobile desenvolvido em React Native para proporcionar aos moradores
+      de condomínios uma forma prática e eficiente de gerenciar entregas, reportar
+      problemas e se manter informados sobre avisos importantes.
 
-      Interface intuitiva com animações suaves, suporte a múltiplas localizações,
-      e notificações de alertas meteorológicos.
+      O app oferece funcionalidades essenciais como leitura de QR Code para validação
+      de entregas, abertura de tickets para problemas em áreas comuns, mural de avisos
+      e notificações push quando entregas chegam na portaria.
     `,
-    image: 'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop',
+    image: '/images/project_five/App_dashboard.jpg',
     images: [
-      'https://images.unsplash.com/photo-1592210454359-9043f067919b?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1601134467661-3d775b999c8b?w=1200&h=800&fit=crop'
+      '/images/project_five/App_dashboard.jpg',
+      '/images/project_five/App_entregas.jpg',
+      '/images/project_five/App_notificacoes.jpg',
+      '/images/project_five/App_ocorrencia.jpg',
+      '/images/project_five/App_perfil.jpg',
     ],
-    technologies: ['Vue.js 3', 'Capacitor', 'TailwindCSS', 'OpenWeather API', 'Geolocation API'],
+    technologies: [
+      'React Native',
+      'Expo',
+      'TypeScript',
+      'React Navigation',
+      'React Query',
+      'QR Code Scanner',
+      'Push Notifications',
+    ],
     features: [
-      'Previsão do tempo em tempo real',
-      'Geolocalização automática',
-      'Salvar múltiplas localizações',
-      'Previsão de 7 dias',
-      'Gráficos de temperatura e precipitação',
-      'Alertas meteorológicos',
-      'Dark/Light mode',
-      'Offline support'
+      'Leitura de QR Code para validação de entregas',
+      'Sistema de tickets para problemas em áreas comuns',
+      'Mural de avisos com notificações',
+      'Notificações push para entregas na portaria',
+      'Visualização de status de tickets em tempo real',
+      'Histórico completo de tickets abertos',
+      'Interface intuitiva e responsiva',
+      'Modo offline para visualização de dados',
+      'Anexar fotos aos tickets',
+      'Sistema de comentários em tickets',
     ],
-    gitURL: 'https://github.com/seu-usuario/weather-app',
-    webURL: '#',
-    demoAvailable: true,
-    year: '2023',
-    role: 'Mobile Developer',
-    challenges: [
-      'Otimizar para diferentes tamanhos de tela',
-      'Implementar cache eficiente de dados',
-      'Gerenciar estados de conectividade',
-      'Criar animações nativas suaves'
-    ]
-  },
-  {
-    id: 6,
-    title: 'Blog CMS',
-    slug: 'blog-cms',
-    category: 'web development',
-    featured: false,
-    shortDescription: 'Sistema de gerenciamento de conteúdo para blogs com editor rich text',
-    description: `
-      CMS completo para blogs desenvolvido com stack moderna. Inclui editor de texto rico,
-      gestão de mídia, sistema de categorias e tags, e publicação programada.
-
-      Interface administrativa intuitiva com preview em tempo real e SEO optimization.
-    `,
-    image: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&h=600&fit=crop',
-    images: [
-      'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=1200&h=800&fit=crop',
-      'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1200&h=800&fit=crop'
-    ],
-    technologies: ['Vue.js 3', 'NestJS', 'PostgreSQL', 'TipTap Editor', 'AWS S3', 'Redis'],
-    features: [
-      'Editor de texto rico (TipTap)',
-      'Upload de imagens para S3',
-      'Sistema de categorias e tags',
-      'Publicação programada',
-      'SEO metadata',
-      'Preview em tempo real',
-      'Sistema de comentários',
-      'Multi-idioma'
-    ],
-    gitURL: 'https://github.com/seu-usuario/blog-cms',
+    gitURL: '#',
     webURL: '#',
     demoAvailable: false,
-    year: '2023',
-    role: 'Full Stack Developer',
+    year: '2024',
+    role: 'Mobile Developer',
     challenges: [
-      'Implementar editor rico performático',
-      'Otimizar upload e serving de imagens',
-      'Criar sistema de cache eficiente',
-      'SEO optimization e meta tags dinâmicas'
-    ]
-  }
+      'Implementar scanner de QR Code performático',
+      'Gerenciar notificações push de forma confiável',
+      'Criar experiência offline-first',
+      'Otimizar performance em dispositivos diversos',
+      'Sincronização de dados em tempo real',
+      'Implementar upload de imagens otimizado',
+    ],
+  },
 ]
 
 // Função helper para pegar projetos por categoria
 export const getProjectsByCategory = (category) => {
   if (category === 'all') return projects
-  return projects.filter(p => p.category.toLowerCase() === category.toLowerCase())
+  return projects.filter(
+    (p) => p.category.toLowerCase() === category.toLowerCase()
+  )
 }
 
 // Função helper para pegar projetos em destaque
 export const getFeaturedProjects = () => {
-  return projects.filter(p => p.featured)
+  return projects.filter((p) => p.featured)
 }
 
 // Função helper para pegar projeto por ID
 export const getProjectById = (id) => {
-  return projects.find(p => p.id === parseInt(id))
+  return projects.find((p) => p.id === parseInt(id))
 }
 
 // Função helper para pegar projeto por slug
 export const getProjectBySlug = (slug) => {
-  return projects.find(p => p.slug === slug)
+  return projects.find((p) => p.slug === slug)
 }

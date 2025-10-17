@@ -7,12 +7,12 @@
       <!-- Section Header -->
       <div class="mb-12 text-center" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-500">
-            Connect
+          {{ t('contact.title') }} <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-500">
+            {{ t('contact.titleHighlight') }}
           </span>
         </h2>
         <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Have a project in mind or just want to chat? I'd love to hear from you!
+          {{ t('contact.subtitle') }}
         </p>
       </div>
 
@@ -22,13 +22,10 @@
           <!-- Description -->
           <div class="mb-8 p-6 rounded-2xl bg-[#111a3e]/30 backdrop-blur-sm border border-[#1f1641]">
             <p class="text-gray-300 leading-relaxed mb-4">
-              Feel free to reach out, whether it's to discuss ideas, collaborate on exciting projects,
-              or just to share knowledge. I'm always open to connecting with others and believe that
-              great ideas are born through collaboration and communication.
+              {{ t('contact.description1') }}
             </p>
             <p class="text-gray-300 leading-relaxed">
-              Whether you want to talk about a project, ask questions, or simply exchange ideas about
-              technology, development, or anything else, I'm here. Let's build something amazing together!
+              {{ t('contact.description2') }}
             </p>
           </div>
 
@@ -50,7 +47,7 @@
                   </svg>
                 </div>
                 <div class="flex-1 min-w-0">
-                  <h4 class="text-white font-semibold mb-1">Email</h4>
+                  <h4 class="text-white font-semibold mb-1">{{ t('contact.email') }}</h4>
                   <a href="mailto:pedro.almeida.work@outlook.com"
                      class="text-gray-400 hover:text-primary transition-colors text-sm truncate block">
                     pedro.almeida.work@outlook.com
@@ -75,7 +72,7 @@
                   </svg>
                 </div>
                 <div class="flex-1">
-                  <h4 class="text-white font-semibold mb-1">Phone</h4>
+                  <h4 class="text-white font-semibold mb-1">{{ t('contact.phone') }}</h4>
                   <a href="tel:+5519998924002" class="text-gray-400 hover:text-primary transition-colors text-sm">
                     +55 (19) 9 9989-4002
                   </a>
@@ -98,7 +95,7 @@
                   </svg>
                 </div>
                 <div class="flex-1 min-w-0">
-                  <h4 class="text-white font-semibold mb-1">LinkedIn</h4>
+                  <h4 class="text-white font-semibold mb-1">{{ t('contact.linkedin') }}</h4>
                   <a href="https://www.linkedin.com/in/pedro-henrique-sousa-almeida-269406211/"
                      target="_blank"
                      class="text-gray-400 hover:text-primary transition-colors text-sm truncate block">
@@ -122,7 +119,7 @@
               <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
               </svg>
-              <p class="text-green-500 text-sm">Message sent successfully! I'll get back to you soon.</p>
+              <p class="text-green-500 text-sm">{{ t('contact.form.success') }}</p>
             </div>
 
             <!-- Error Message -->
@@ -131,13 +128,13 @@
               <svg class="w-6 h-6 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
               </svg>
-              <p class="text-red-500 text-sm">Failed to send message. Please try again.</p>
+              <p class="text-red-500 text-sm">{{ t('contact.form.error') }}</p>
             </div>
 
             <!-- Name Field -->
             <div class="mb-6">
               <label for="name" class="block text-white font-medium mb-2">
-                Your Name
+                {{ t('contact.form.name') }}
               </label>
               <input
                 type="text"
@@ -149,14 +146,14 @@
                        text-white placeholder-gray-500
                        focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20
                        transition-all duration-300 disabled:opacity-50"
-                placeholder="John Doe"
+                :placeholder="t('contact.form.namePlaceholder')"
               />
             </div>
 
             <!-- Email Field -->
             <div class="mb-6">
               <label for="email" class="block text-white font-medium mb-2">
-                Your Email
+                {{ t('contact.form.email') }}
               </label>
               <input
                 type="email"
@@ -168,14 +165,14 @@
                        text-white placeholder-gray-500
                        focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20
                        transition-all duration-300 disabled:opacity-50"
-                placeholder="john@example.com"
+                :placeholder="t('contact.form.emailPlaceholder')"
               />
             </div>
 
             <!-- Subject Field -->
             <div class="mb-6">
               <label for="subject" class="block text-white font-medium mb-2">
-                Subject
+                {{ t('contact.form.subject') }}
               </label>
               <input
                 type="text"
@@ -187,14 +184,14 @@
                        text-white placeholder-gray-500
                        focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20
                        transition-all duration-300 disabled:opacity-50"
-                placeholder="Project Inquiry"
+                :placeholder="t('contact.form.subjectPlaceholder')"
               />
             </div>
 
             <!-- Message Field -->
             <div class="mb-6">
               <label for="message" class="block text-white font-medium mb-2">
-                Message
+                {{ t('contact.form.message') }}
               </label>
               <textarea
                 id="message"
@@ -206,7 +203,7 @@
                        text-white placeholder-gray-500 resize-none
                        focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20
                        transition-all duration-300 disabled:opacity-50"
-                placeholder="Tell me about your project..."
+                :placeholder="t('contact.form.messagePlaceholder')"
               ></textarea>
             </div>
 
@@ -226,14 +223,14 @@
                   <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                   <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                 </svg>
-                Sending...
+                {{ t('contact.form.sending') }}
               </span>
               <span v-else class="flex items-center gap-2">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                         d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
                 </svg>
-                Send Message
+                {{ t('contact.form.send') }}
               </span>
             </button>
           </form>
@@ -245,7 +242,10 @@
 
 <script setup>
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
 import emailjs from 'emailjs-com';
+
+const { t } = useI18n();
 
 const formData = ref({
   name: '',

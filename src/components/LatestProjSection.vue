@@ -4,16 +4,15 @@
       <!-- Section Header -->
       <div class="mb-12 text-center" data-aos="fade-up">
         <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
-          My
+          {{ t('projects.title') }}
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-pink-500"
           >
-            Latest Projects
+            {{ t('projects.titleHighlight') }}
           </span>
         </h2>
         <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-          Explore my recent work showcasing modern web development, clean
-          architecture, and innovative solutions
+          {{ t('projects.subtitle') }}
         </p>
       </div>
 
@@ -25,16 +24,16 @@
       >
         <button
           v-for="category in categories"
-          :key="category"
-          @click="selectedCategory = category"
+          :key="category.key"
+          @click="selectedCategory = category.key"
           :class="[
             'px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105',
-            selectedCategory === category
+            selectedCategory === category.key
               ? 'bg-gradient-to-r from-primary to-pink-500 text-white shadow-lg shadow-primary/50'
               : 'bg-[#111a3e] border border-[#1f1641] text-gray-300 hover:border-primary',
           ]"
         >
-          {{ category.charAt(0).toUpperCase() + category.slice(1) }}
+          {{ category.label.charAt(0).toUpperCase() + category.label.slice(1) }}
         </button>
       </div>
 
@@ -69,7 +68,7 @@
                   v-if="project.featured"
                   class="absolute top-4 right-4 px-3 py-1 bg-gradient-to-r from-primary to-pink-500 rounded-full text-xs font-bold text-white"
                 >
-                  ⭐ Featured
+                  ⭐ {{ t('projects.featured') }}
                 </div>
 
                 <!-- Action Buttons -->
@@ -231,7 +230,7 @@
         <button
           class="px-8 py-3 bg-gradient-to-r from-primary to-pink-500 rounded-full font-medium text-white hover:shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
         >
-          View All Projects
+          {{ t('projects.viewAllProjects') }}
           <svg
             class="inline-block w-5 h-5 ml-2"
             fill="none"
@@ -253,15 +252,23 @@
 <script setup>
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 import { projects, getProjectsByCategory } from '@/data/projects'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+
+const { t } = useI18n()
 
 AOS.init()
 
 const router = useRouter()
 
-const categories = ref(['all', 'web development', 'backend', 'mobile app'])
+const categories = computed(() => [
+  { key: 'all', label: t('projects.all') },
+  { key: 'web development', label: t('projects.webDevelopment') },
+  { key: 'backend', label: t('projects.backend') },
+  { key: 'mobile app', label: t('projects.mobileApp') }
+])
 const selectedCategory = ref('all')
 
 const filteredProjects = computed(() => {

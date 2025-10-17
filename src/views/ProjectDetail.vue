@@ -81,12 +81,24 @@
       <!-- Main Image -->
       <div class="mb-12" data-aos="fade-up" data-aos-delay="100">
         <div class="relative rounded-2xl overflow-hidden border border-primary/20
-                    shadow-2xl shadow-primary/10 group">
+                    shadow-2xl shadow-primary/10 group cursor-pointer"
+             @click="openModal(0)">
           <img :src="project.images[0]"
                :alt="project.title"
-               class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700">
-          <div class="absolute inset-0 bg-gradient-to-t from-[#111827]/50 to-transparent
-                      opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+               :class="[
+                 'w-full object-contain group-hover:scale-105 transition-transform duration-700',
+                 project.category === 'mobile app' ? 'max-h-[600px]' : 'h-auto'
+               ]">
+          <div class="absolute inset-0 bg-gradient-to-t from-[#111827]/80 to-transparent
+                      opacity-0 group-hover:opacity-100 transition-opacity duration-500
+                      flex items-center justify-center">
+            <div class="text-center">
+              <svg class="w-16 h-16 text-white mb-2 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+              </svg>
+              <p class="text-white font-medium">Click to view full size</p>
+            </div>
           </div>
         </div>
       </div>
@@ -140,16 +152,28 @@
           <!-- Gallery -->
           <section v-if="project.images.length > 1" data-aos="fade-up">
             <h2 class="text-3xl font-bold text-white mb-6">Project Gallery</h2>
-            <div class="grid sm:grid-cols-2 gap-4">
+            <div :class="[
+              'grid gap-4',
+              project.category === 'mobile app' ? 'grid-cols-2 sm:grid-cols-3 md:grid-cols-4' : 'sm:grid-cols-2'
+            ]">
               <div v-for="(image, index) in project.images.slice(1)"
                    :key="index"
+                   @click="openModal(index + 1)"
                    class="relative rounded-xl overflow-hidden border border-[#1f1641]
                           hover:border-primary/50 transition-all duration-300 group cursor-pointer">
                 <img :src="image"
                      :alt="`${project.title} screenshot ${index + 2}`"
-                     class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#111827]/80 to-transparent
-                            opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                     :class="[
+                       'w-full object-contain group-hover:scale-110 transition-transform duration-500',
+                       project.category === 'mobile app' ? 'h-48 md:h-56' : 'h-64 object-cover'
+                     ]">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#111827]/90 to-transparent
+                            opacity-0 group-hover:opacity-100 transition-opacity duration-300
+                            flex items-center justify-center">
+                  <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                          d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"/>
+                  </svg>
                 </div>
               </div>
             </div>
@@ -257,6 +281,15 @@
         </div>
       </section>
     </div>
+
+    <!-- Image Modal -->
+    <ImageModal
+      v-if="project"
+      :images="project.images"
+      :start-index="selectedImageIndex"
+      :is-open="isModalOpen"
+      @close="closeModal"
+    />
   </div>
 </template>
 
@@ -264,11 +297,29 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { getProjectById } from '@/data/projects';
+import ImageModal from '@/components/ImageModal.vue';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
 const route = useRoute();
 const project = ref(null);
+
+// Modal state
+const isModalOpen = ref(false);
+const selectedImageIndex = ref(0);
+
+const openModal = (index) => {
+  selectedImageIndex.value = index;
+  isModalOpen.value = true;
+  // Prevent body scroll when modal is open
+  document.body.style.overflow = 'hidden';
+};
+
+const closeModal = () => {
+  isModalOpen.value = false;
+  // Restore body scroll
+  document.body.style.overflow = '';
+};
 
 onMounted(() => {
   AOS.init();
