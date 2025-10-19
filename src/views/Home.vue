@@ -14,7 +14,7 @@
 <script setup>
 import { defineAsyncComponent } from 'vue'
 
-// Import Components Asynchronously
+// Import Components Asynchronously for better performance and code splitting
 const HeroSection = defineAsyncComponent(
   () => import('@/components/HeroSection.vue')
 )

@@ -3,8 +3,10 @@ import enUS from './locales/en-US'
 import ptBR from './locales/pt-BR'
 
 // Get saved language from localStorage or use browser language
-const savedLocale = localStorage.getItem('locale')
-const browserLocale = navigator.language.toLowerCase()
+// Check if running in browser environment (not during build)
+const isBrowser = typeof window !== 'undefined'
+const savedLocale = isBrowser ? localStorage.getItem('locale') : null
+const browserLocale = isBrowser ? navigator.language.toLowerCase() : ''
 
 let defaultLocale = 'en-US'
 

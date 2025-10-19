@@ -225,27 +225,6 @@
         <p class="text-gray-400">Try selecting a different category</p>
       </div>
 
-      <!-- View All Button -->
-      <div class="text-center mt-12" data-aos="fade-up">
-        <button
-          class="px-8 py-3 bg-gradient-to-r from-primary to-pink-500 rounded-full font-medium text-white hover:shadow-lg hover:shadow-primary/50 transform hover:scale-105 transition-all duration-300"
-        >
-          {{ t('projects.viewAllProjects') }}
-          <svg
-            class="inline-block w-5 h-5 ml-2"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </button>
-      </div>
     </div>
   </section>
 </template>
@@ -266,7 +245,6 @@ const router = useRouter()
 const categories = computed(() => [
   { key: 'all', label: t('projects.all') },
   { key: 'web development', label: t('projects.webDevelopment') },
-  { key: 'backend', label: t('projects.backend') },
   { key: 'mobile app', label: t('projects.mobileApp') }
 ])
 const selectedCategory = ref('all')

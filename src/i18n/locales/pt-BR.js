@@ -119,7 +119,7 @@ export default {
       name: 'Seu Nome',
       namePlaceholder: 'João Silva',
       email: 'Seu Email',
-      emailPlaceholder: 'joao@example.com',
+      emailPlaceholder: "joao{'@'}example.com",
       subject: 'Assunto',
       subjectPlaceholder: 'Consulta de Projeto',
       message: 'Mensagem',
